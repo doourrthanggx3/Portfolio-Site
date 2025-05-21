@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Optional: if using Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- GLOBAL BASE ---------- */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: #ffffff;
+}
+
+/* ---------- THEME BACKGROUNDS ---------- */
+
+.home-theme {
+  background: linear-gradient(135deg, #fa8072, #ffd699);
+  color: #ffffff;
+}
+
+.about-theme {
+  background: linear-gradient(135deg, #86efac, #d9f99d);
+  color: #1a1a1a;
+}
+
+.projects-theme {
+  background: linear-gradient(135deg, #fcd34d, #fef3c7);
+  color: #1a1a1a;
+}
+
+.stack-theme {
+  background: linear-gradient(135deg, #60a5fa, #c7e6fd);
+  color: #1a1a1a;
+}
+
+.contact-theme {
+  background: linear-gradient(135deg, #c084fc, #e9d5ff);
+  color: #1a1a1a;
+}
+
+/* ---------- BOUNCE + EMOJI ---------- */
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.bounce {
+  display: block;
+  margin: auto;
+  font-size: 1.8rem;
+  animation: bounce 1.5s infinite;
+}
+
+.big-emoji {
+  font-size: 4rem;
+  display: block;
+  text-align: center;
+  animation: bounce 1.5s infinite;
+  margin-top: 0.5rem;
+}
+
+/* ---------- HEADINGS & INTRO ---------- */
+
+.intro-container {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+h1.intro {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+h2.sub-intro {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h3.name {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  background-color: white;
+  color: #fa8072;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin: auto;
+}
+
+/* ---------- TEXT + CTA ---------- */
+
+.subtitle {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1.5rem auto 2rem auto;
+  color: inherit;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: white;
+  color: #fa8072;
+  font-weight: 600;
+  border-radius: 2rem;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.cta-button:hover {
+  background-color: #ffe5e0;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 50;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fa8072;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-weight: 600;
+}
+
+/* ---------- ANIMATED NAV LINKS ---------- */
+
+.link {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 4px;
+  transition: color 0.3s ease, transform 0.2 ease;
+  overflow: hidden;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: transparent;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.link:hover::after {
+  transform: scaleX(1) translateY(-2px);
+  animation: bounce-glow 0.6s infinite alternate;
+}
+
+.link:hover {
+  animation: bounceText 0.4s ease;
+}
+
+@keyframes bounceText {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Per-page link hover underline colors */
+.link.about:hover::after {
+  background-color: #86efac;
+}
+.link.projects:hover::after {
+  background-color: #fcd34d;
+}
+.link.stack:hover::after {
+  background-color: #60a5fa;
+}
+.link.contact:hover::after {
+  background-color: #c084fc;
+}
+
+/* ---------- ACTIVE NAV LINK COLORS ---------- */
+.link.active.about { color: #86efac; }
+.link.active.projects { color: #fcd34d; }
+.link.active.stack { color: #60a5fa; }
+.link.active.contact { color: #c084fc; }
+
+/* ---------- Underline Wiggle + Glow Animation ---------- */
+@keyframes bounce-glow {
+  0% {
+    transform: scaleX(1) translateY(-2px) rotate(0deg);
+    box-shadow: 0 0 5px currentColor;
+  }
+  25% {
+    transform: scaleX(1) translateY(-3px) rotate(-1deg);
+    box-shadow: 0 0 7px currentColor;
+  }
+  50% {
+    transform: scaleX(1) translateY(-4px) rotate(1deg);
+    box-shadow: 0 0 10px currentColor;
+  }
+  100% {
+    transform: scaleX(1) translateY(-2px) rotate(0deg);
+    box-shadow: 0 0 6px currentColor;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+  h1.intro {
+    font-size: 2rem;
+  }
+  h2.sub-intro {
+    font-size: 1.5rem;
+  }
+  h3.name {
+    font-size: 2.3rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-end;
+    font-size: 0.95rem;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+}
+

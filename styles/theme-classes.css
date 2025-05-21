@@ -1,0 +1,44 @@
+/* Background + font themes per page */
+
+.home-theme {
+  background: linear-gradient(135deg, #fa8072, #ffd699);
+  color: #ffffff;
+}
+
+.about-theme {
+  background: linear-gradient(135deg, #86efac, #d9f99d);
+  color: #1a1a1a;
+}
+
+.projects-theme {
+  background: linear-gradient(135deg, #fcd34d, #fef3c7);
+  color: #1a1a1a;
+}
+
+.stack-theme {
+  background: linear-gradient(135deg, #60a5fa, #c7e6fd);
+  color: #1a1a1a;
+}
+
+.contact-theme {
+  background: linear-gradient(135deg, #c084fc, #e9d5ff);
+  color: #1a1a1a;
+}
+
+/* Optional: nav link highlight classes */
+
+.nav-link.active.home {
+  color: #fa8072;
+}
+.nav-link.active.about {
+  color: #86efac;
+}
+.nav-link.active.projects {
+  color: #fcd34d;
+}
+.nav-link.active.stack {
+  color: #60a5fa;
+}
+.nav-link.active.contact {
+  color: #c084fc;
+}
