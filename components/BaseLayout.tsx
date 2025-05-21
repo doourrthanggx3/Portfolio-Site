@@ -12,12 +12,10 @@ export default function BaseLayout({
   themeClass: string;
 }) {
   return (
-    <html lang="en">
-      <body className={themeClass}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <div className={themeClass}>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </div>
   );
 }

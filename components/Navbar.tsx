@@ -9,8 +9,8 @@ export default function Navbar() {
   const [activePage, setActivePage] = useState<string>('home');
 
   useEffect(() => {
-    const route = pathname?.split('/')[1]; // get the first slug (e.g., "about")
-    setActivePage(route || 'home');        // default to "home" if root
+    const route = pathname?.split('/')[1]; // Get first slug
+    setActivePage(route || 'home'); // Default to "home"
   }, [pathname]);
 
   const links = [
@@ -23,11 +23,12 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-content">
-        <Link href="/" className="logo">
-          MarissaLynn.dev
+        <Link href="/" className="logo link home">
+          <span className="logo-text">MarissaLynnNoblett.dev</span>
         </Link>
+
         <div className="nav-links">
-          {links.map(link => (
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -41,4 +42,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
